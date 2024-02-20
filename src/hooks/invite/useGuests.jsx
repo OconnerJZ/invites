@@ -1,0 +1,114 @@
+import {
+  clientAxiosGET,
+  clientAxiosPOST,
+  clientAxiosPUT,
+} from "@Config/axios/methodRequest";
+import { BASE_URL_INVITE } from "@Const/enviroments";
+import { ColumnsGuests } from "@Pages/ColumnsGuests";
+import { message } from "antd";
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+
+const success = (messageApi, content) => {
+  messageApi.open({
+    type: "success",
+    content: content,
+  });
+};
+
+const useGuests = () => {
+  const params = useParams();
+  const [guests, setGuest] = useState([]);
+  const [isLoading, setisLoading] = useState(false);
+  const [open, setOpen] = useState(false);
+  const [row, setRow] = useState({});
+
+  const [messageApi, contextHolder] = message.useMessage();
+
+  const getGuest = async () => {
+    setisLoading(true);
+    const data = await clientAxiosGET({ url: "guest" });
+    setGuest(data);
+    setisLoading(false);
+  };
+
+  const onShare = (row) => {
+    const url = `${BASE_URL_INVITE}${row?.event_id}/${row?.id}`;
+    const message = `Invitación: ${url}`;
+    const whatsappUrl = `https://wa.me/${row?.phone}?text=${encodeURIComponent(
+      message
+    )}`;
+    const esDispositivoMovil =
+      /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+        navigator.userAgent
+      );
+    const target = esDispositivoMovil ? "_self" : "_blank";
+    window.open(whatsappUrl, target);
+  };
+
+  const refresh = () => {
+    getGuest();
+  };
+
+  const openGuest = () => {
+    setOpen(true);
+  };
+  const closeGuest = () => {
+    setOpen(false);
+    setRow({});
+  };
+
+  const modalGuest = {
+    open,
+    openGuest,
+    closeGuest,
+  };
+
+  const onEdit = (row) => {
+    openGuest();
+    setRow(row);
+  };
+
+  const columns = ColumnsGuests(onShare, onEdit);
+
+  const onFinish = async (values) => {
+    const data = values;
+    if (!row?.id) {
+      data.event_id = params?.inviteId;
+      data.confirmation = 0;
+      const response = await clientAxiosPOST({ url: "guest", data });
+      success(messageApi, response?.message);
+    } else {
+      const response = await clientAxiosPUT({ url: "guest/" + row?.id, data });
+      success(messageApi, response?.message);
+    }
+    refresh();
+    closeGuest();
+  };
+  const onFinishFailed = (errorInfo) => {
+    console.log("Failed:", errorInfo);
+  };
+
+  const formGuest = {
+    onFinish,
+    onFinishFailed,
+  };
+
+  useEffect(() => {
+    getGuest();
+  }, []);
+
+  return {
+    guests,
+    columns,
+    isLoading,
+    onShare,
+    refresh,
+    modalGuest,
+    formGuest,
+    contextHolder,
+    row,
+  };
+};
+
+export default useGuests;

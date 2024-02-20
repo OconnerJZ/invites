@@ -1,0 +1,322 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Great+Vibes&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+.titlePrimary {
+  font-family: "Great Vibes", cursive !important;
+  font-weight: 400;
+  font-style: normal;
+}
+.titleSecondary{
+  font-family: "Cinzel", serif !important;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.titleContent{
+  font-family: "Playfair Display", serif !important;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  letter-spacing: 0.5px;
+}
+
+.header-navbar .ant-layout-header {
+  background: transparent;
+  padding-inline: 0px;
+  height: unset;
+  line-height: unset;
+}
+
+.image-background {
+  width: var(--width);
+  height: var(--height);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.parallax {
+  background-attachment: fixed;
+}
+
+.tempo .ant-card-bordered {
+  border: none;
+}
+.tempo .ant-card .ant-card-grid {
+  box-shadow: none;
+  padding: 5px;
+}
+
+.container {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+/* Bottom left text */
+.bottom-left {
+  position: absolute;
+  bottom: 8px;
+  left: 16px;
+}
+
+/* Top left text */
+.top-left {
+  position: absolute;
+  top: 8px;
+  left: 16px;
+}
+
+/* Top right text */
+.top-right {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+}
+
+/* Bottom right text */
+.bottom-right {
+  position: absolute;
+  bottom: 8px;
+  right: 16px;
+}
+
+/* Centered text */
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.bottom-centered {
+  position: absolute;
+  bottom: -5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+/*--------------------
+Boarding Pass
+--------------------*/
+.boarding-pass {
+
+  width: 330px;
+  height: 425px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  text-transform: uppercase;
+  /*--------------------
+  Header
+  --------------------*/
+  /*--------------------
+  Cities
+  --------------------*/
+  /*--------------------
+  Infos
+  --------------------*/
+  /*--------------------
+  Strap
+  --------------------*/
+}
+.boarding-pass small {
+  display: block;
+  font-size: 13px;
+  color: #A2A9B3;
+  margin-bottom: 2px;
+}
+.boarding-pass strong {
+  font-size: 18px;
+  display: block;
+}
+.boarding-pass header {
+  background: linear-gradient(to bottom, #36475f, #2c394f);
+  padding: 12px 20px;
+  height: 53px;
+}
+.boarding-pass header .logo {
+  float: left;
+  width: 104px;
+  height: 31px;
+}
+.boarding-pass header .flight {
+  float: right;
+  color: #fff;
+  text-align: right;
+}
+.boarding-pass header .flight small {
+  font-size: 11px;
+  margin-bottom: 2px;
+  opacity: 0.8;
+}
+.boarding-pass header .flight strong {
+  font-size: 18px;
+}
+.boarding-pass .cities {
+  position: relative;
+}
+.boarding-pass .cities::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.boarding-pass .cities .city {
+  padding: 20px 18px;
+  float: left;
+}
+.boarding-pass .cities .city:nth-child(2) {
+  float: right;
+}
+.boarding-pass .cities .city strong {
+  font-size: 40px;
+  font-weight: 300;
+  line-height: 1;
+}
+.boarding-pass .cities .city small {
+  margin-bottom: 0px;
+  margin-left: 3px;
+}
+.boarding-pass .cities .airplane {
+  position: absolute;
+  width: 30px;
+  height: 25px;
+  top: 57%;
+  left: 30%;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  -webkit-animation: move 3s infinite;
+          animation: move 3s infinite;
+}
+@-webkit-keyframes move {
+  40% {
+    left: 50%;
+    opacity: 1;
+  }
+  100% {
+    left: 70%;
+    opacity: 0;
+  }
+}
+@keyframes move {
+  40% {
+    left: 50%;
+    opacity: 1;
+  }
+  100% {
+    left: 70%;
+    opacity: 0;
+  }
+}
+.boarding-pass .infos {
+  display: flex;
+  border-top: 1px solid #99D298;
+}
+.boarding-pass .infos .places,
+.boarding-pass .infos .times {
+  width: 50%;
+  padding: 10px 0;
+}
+.boarding-pass .infos .places::after,
+.boarding-pass .infos .times::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.boarding-pass .infos .times strong {
+  transform: scale(0.9);
+  transform-origin: left bottom;
+}
+.boarding-pass .infos .places {
+  background: #ECECEC;
+  border-right: 1px solid #99D298;
+}
+.boarding-pass .infos .places small {
+  color: #97A1AD;
+}
+.boarding-pass .infos .places strong {
+  color: #239422;
+}
+.boarding-pass .infos .box {
+  padding: 10px 20px 10px;
+  width: 47%;
+  float: left;
+}
+.boarding-pass .infos .box-double {
+  padding: 10px 20px 10px;
+  width: 100%;
+  float: left;
+  text-align: center;
+}
+
+.boarding-pass .infos .box small {
+  font-size: 12px;
+}
+.boarding-pass .strap {
+  clear: both;
+  position: relative;
+  border-top: 1px solid #99D298;
+}
+.boarding-pass .strap::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.boarding-pass .strap .box {
+  padding: 23px 0 20px 20px;
+}
+.boarding-pass .strap .box div {
+  margin-bottom: 15px;
+}
+.boarding-pass .strap .box div small {
+  font-size: 12px;
+}
+.boarding-pass .strap .box div strong {
+  font-size: 15px;
+}
+.boarding-pass .strap .box sup {
+  font-size: 10px;
+  position: relative;
+  top: -5px;
+}
+.boarding-pass .strap .qrcode {
+  position: absolute;
+  top: 25px;
+  right: 20px;
+  width: 80px;
+  height: 80px;
+}
+
+.ant-drawer-content{
+  background-color: rgba(255, 255, 255, 0.99) !important;
+  backdrop-filter: blur(4px);
+}
+.ant-drawer-close{
+  font-weight: 900 !important;
+  color: rgba(0, 0, 0, 1) !important;
+}
+
+.ant-qrcode{
+  padding: 0;
+}
+
+.ant-result-title, .ant-result-extra{
+  color: #f2f2f2 !important;
+}
+
+.ant-descriptions-small .ant-descriptions-row >td {
+  padding-bottom: 0px ;
+}
+
+.ant-descriptions .ant-descriptions-header{
+  margin-bottom: 1px;
+}
+
+@media only screen and (max-device-width: 1366px) {
+  .parallax {
+    background-attachment: scroll;
+  }
+}

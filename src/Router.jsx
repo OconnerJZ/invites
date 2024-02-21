@@ -1,4 +1,4 @@
-import { Routes, Route, BrowserRouter } from "react-router-dom";
+import { Routes, Route, HashRouter } from "react-router-dom";
 import Layout from "@Components/layout/Layout";
 import MyInvites from "@Pages/MyInvites";
 import Invite from "@Pages/Invite";
@@ -20,7 +20,7 @@ const Router = () => {
     />
   );
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route path="mis-invitaciones">
@@ -41,7 +41,7 @@ const Router = () => {
           {rutaDefault}
         </Route>
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 };
 

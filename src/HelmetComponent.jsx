@@ -16,11 +16,12 @@ const HelmetComponent = () => {
       <title>{title}</title>
       <meta property="og:title" content={title} />
       <meta property="og:description" content={fest?.phrase} />
-      <meta property="og:url" content="URL de tu página" />
       <meta
         property="og:image"
         content={`${BASE_URL_API}files/${fest?.id}/images/${fest?.avatar}`}
       />
+      {/* <meta property="og:url" content={} /> */}
+      <meta property="og:type" content="website" />
     </Helmet>
   );
 };

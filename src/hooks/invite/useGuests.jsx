@@ -23,7 +23,7 @@ const useGuests = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [open, setOpen] = useState(false);
   const [row, setRow] = useState({});
-  const { addFest } = useInviteContext();
+  const { addFest, addLinkFest } = useInviteContext();
 
   const [messageApi, contextHolder] = message.useMessage();
 
@@ -45,6 +45,7 @@ const useGuests = () => {
 
   const onShare = (row) => {
     const url = `${BASE_URL_INVITE}${row?.event_id}/${row?.id}`;
+    addLinkFest(url);
     const message = `Invitación: ${url}`;
     const whatsappUrl = `https://wa.me/${row?.phone}?text=${encodeURIComponent(
       message

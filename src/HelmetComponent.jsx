@@ -4,7 +4,7 @@ import { useInviteContext } from "@Context/InviteContext";
 import { Helmet } from "react-helmet";
 
 const HelmetComponent = () => {
-  const { fest } = useInviteContext();
+  const { fest, urlfest } = useInviteContext();
   const title =
     fest?.id > 0
       ? `${typeEvents[fest?.event_type_id]} ${
@@ -20,7 +20,7 @@ const HelmetComponent = () => {
         property="og:image"
         content={`${BASE_URL_API}files/${fest?.id}/images/${fest?.avatar}`}
       />
-      {/* <meta property="og:url" content={} /> */}
+      <meta property="og:url" content={urlfest} />
       <meta property="og:type" content="website" />
     </Helmet>
   );

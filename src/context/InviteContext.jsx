@@ -11,14 +11,19 @@ const InviteProvider = ({ children }) => {
     avatar: "",
     phrase: "",
   });
+  const [urlfest, setUrlfest] = useState("");
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const addFest = (event) => setFest(event);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const addLinkFest = (url) => setUrlfest(url);
   const configProviderValue = useMemo(
     () => ({
+      urlfest,
       fest,
       addFest,
+      addLinkFest,
     }),
-    [fest, addFest]
+    [fest, urlfest, addFest, addLinkFest]
   );
   return (
     <InviteContext.Provider value={configProviderValue}>

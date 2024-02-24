@@ -9,6 +9,7 @@ import { Grid, IconButton, Stack, Tooltip } from "@mui/material";
 import BallotIcon from "@mui/icons-material/Ballot";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import { useNavigate } from "react-router-dom";
+import { typeEvents } from "@Const/lists";
 
 const MyInvites = () => {
   const { events } = useMyInvites();
@@ -39,7 +40,7 @@ const MyInvites = () => {
               </AspectRatio>
               <CardContent>
                 <Typography level="title-lg" id="card-description">
-                  Cumpleaños
+                  {typeEvents[even?.event_type_id]}
                 </Typography>
                 <Typography
                   level="body-sm"

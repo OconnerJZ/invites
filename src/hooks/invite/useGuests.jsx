@@ -4,6 +4,7 @@ import {
   clientAxiosPUT,
 } from "@Config/axios/methodRequest";
 import { BASE_URL_INVITE } from "@Const/enviroments";
+import { useInviteContext } from "@Context/InviteContext";
 import { ColumnsGuests } from "@Pages/ColumnsGuests";
 import { message } from "antd";
 import { useEffect, useState } from "react";
@@ -22,13 +23,17 @@ const useGuests = () => {
   const [isLoading, setisLoading] = useState(false);
   const [open, setOpen] = useState(false);
   const [row, setRow] = useState({});
+  const { addFest } = useInviteContext();
 
   const [messageApi, contextHolder] = message.useMessage();
 
   const getGuest = async () => {
     setisLoading(true);
-    const data = await clientAxiosGET({ url: "guest" });
+    const data = await clientAxiosGET({
+      url: `event/${params?.inviteId}/guests`,
+    });
     setGuest(data);
+    addFest(data);
     setisLoading(false);
   };
 

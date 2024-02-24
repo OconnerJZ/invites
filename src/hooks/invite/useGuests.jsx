@@ -19,8 +19,8 @@ const success = (messageApi, content) => {
 
 const useGuests = () => {
   const params = useParams();
-  const [guests, setGuest] = useState([]);
-  const [isLoading, setisLoading] = useState(false);
+  const [guests, setGuests] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
   const [open, setOpen] = useState(false);
   const [row, setRow] = useState({});
   const { addFest } = useInviteContext();
@@ -28,13 +28,13 @@ const useGuests = () => {
   const [messageApi, contextHolder] = message.useMessage();
 
   const getGuest = async () => {
-    setisLoading(true);
+    setIsLoading(true);
     const data = await clientAxiosGET({
       url: `event/${params?.inviteId}/guests`,
     });
-    setGuest(data);
+    setGuests(data);
     addFest(data);
-    setisLoading(false);
+    setIsLoading(false);
   };
 
   const onShare = (row) => {
@@ -101,6 +101,7 @@ const useGuests = () => {
 
   useEffect(() => {
     getGuest();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return {

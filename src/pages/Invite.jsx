@@ -78,6 +78,7 @@ const Invite = () => {
         {images?.map((image) => (
           <Box key={`${image?.id}-img`}>
             <img
+              alt=""
               width={"100%"}
               src={`${path}${image?.path}`}
               style={{

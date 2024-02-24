@@ -33,8 +33,14 @@ const useGuests = () => {
       url: `event/${params?.inviteId}/guests`,
     });
     setGuests(data);
-    addFest(data);
     setIsLoading(false);
+  };
+
+  const getInvite = async () => {
+    const data = await clientAxiosGET({
+      url: `event/${params?.inviteId}`,
+    });
+    addFest(data);
   };
 
   const onShare = (row) => {
@@ -101,7 +107,8 @@ const useGuests = () => {
 
   useEffect(() => {
     getGuest();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    getInvite();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return {

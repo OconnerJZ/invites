@@ -133,7 +133,6 @@ Background.propTypes = {
   width: PropTypes.string,
   height: PropTypes.string,
   parallax: PropTypes.bool,
-  avatar: PropTypes.string,
   birthday: PropTypes.object,
   mensaje: PropTypes.string,
   isDark: PropTypes.bool,

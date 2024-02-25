@@ -14,14 +14,14 @@ const HelmetComponent = () => {
   return (
     <Helmet>
       <title>{title}</title>
-      {/* <meta property="og:title" content={title} />
+      <meta property="og:title" content={title} />
       <meta property="og:description" content={fest?.phrase} />
       <meta
         property="og:image"
         content={`${BASE_URL_API}files/${fest?.id}/images/${fest?.avatar}`}
       />
       <meta property="og:url" content={urlfest} />
-      <meta property="og:type" content="website" /> */}
+      <meta property="og:type" content="website" />
     </Helmet>
   );
 };

@@ -5,7 +5,7 @@ import Router from "./Router";
 const App = () => {
   return (
     <InviteProvider>
-      <HelmetComponent />
+      {/* <HelmetComponent /> */}
       <Router />
     </InviteProvider>
   );

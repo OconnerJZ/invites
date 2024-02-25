@@ -67,7 +67,7 @@ const Navbar = (props) => {
       <AppBar
         component="nav"
         sx={{
-          backgroundColor: "rgba(255,255,255, 0.7)",
+          backgroundColor: "rgba(209,226,49, 0.7)",
           backdropFilter: "blur(5px)",
           color: "#3a3b3d",
         }}

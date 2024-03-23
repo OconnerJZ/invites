@@ -1,7 +1,7 @@
 import { Descriptions } from "antd";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import ShareIcon from "@mui/icons-material/Share";
-import EditIcon from '@mui/icons-material/Edit';
+import EditIcon from "@mui/icons-material/Edit";
 import { IconButton } from "@mui/material";
 
 export const ColumnsGuests = (onShare, onEdit) => [
@@ -20,7 +20,7 @@ export const ColumnsGuests = (onShare, onEdit) => [
   {
     title: "Invitado",
     key: "invitado",
-    responsive: ["xs"],
+    responsive: ["xs", "sm"],
     width: 250,
     render: (_, row) => (
       <Descriptions title={row.name} size="small">

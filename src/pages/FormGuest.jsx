@@ -3,8 +3,7 @@ import { Form, Input } from "antd";
 
 const FormGuest = () => {
   return (
-    <>
-      <Grid container spacing={1}>
+    <Grid container spacing={1}>
         <Grid item xs={12} sm={12} md={6}>
           <Form.Item
             label="Invitado"
@@ -76,7 +75,6 @@ const FormGuest = () => {
           </Form.Item>
         </Grid>
       </Grid>
-    </>
   );
 };
 

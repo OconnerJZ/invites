@@ -6,6 +6,7 @@ import moment from "moment";
 import useInvite from "@Hooks/invite/useInvite";
 import { msjTempo } from "@Const/invite";
 import AudioComponent from "@Components/audio/AudioComponent";
+import HelmetComponent from "src/HelmetComponent";
 
 const Invite = () => {
   const {
@@ -25,6 +26,7 @@ const Invite = () => {
 
   return (
     <>
+      <HelmetComponent />
       {contextHolder}
       <AudioComponent pathAudio={pathAudio} />
       <Background

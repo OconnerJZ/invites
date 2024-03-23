@@ -1,5 +1,5 @@
 import InviteProvider from "@Context/InviteContext";
-import HelmetComponent from "./HelmetComponent";
+import HelmetComponent from "./components/helmet/HelmetComponent";
 import Router from "./Router";
 
 const App = () => {

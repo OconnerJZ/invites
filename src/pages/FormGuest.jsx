@@ -1,6 +1,8 @@
 import { Grid } from "@mui/material";
 import { Form, Input } from "antd";
 
+const regexPhone = /^[0-9]+$/;
+
 const FormGuest = () => {
   return (
     <Grid container spacing={1}>
@@ -32,7 +34,7 @@ const FormGuest = () => {
             <Input size="large" />
           </Form.Item>
         </Grid>
-        <Grid item xs={4} sm={4} md={6}>
+        <Grid item xs={12} sm={4} md={6}>
           <Form.Item
             label="Télefono"
             name="phone"
@@ -41,12 +43,16 @@ const FormGuest = () => {
                 required: true,
                 message: "Porfavor ingrese la familia del invitado",
               },
+              {
+                pattern: regexPhone, // Utiliza la expresión regular definida
+                message: 'Por favor ingresa solo números (no se aceptan espacios)',
+              },
             ]}
           >
             <Input size="large" />
           </Form.Item>
         </Grid>
-        <Grid item xs={4} sm={4} md={3}>
+        <Grid item xs={6} sm={4} md={3}>
           <Form.Item
             label="No. de mesa"
             name="no_table"
@@ -55,12 +61,16 @@ const FormGuest = () => {
                 required: true,
                 message: "Porfavor ingrese la mesa del invitado",
               },
+              {
+                pattern: regexPhone, // Utiliza la expresión regular definida
+                message: 'Por favor ingresa solo números (no se aceptan espacios)',
+              },
             ]}
           >
             <Input size="large" />
           </Form.Item>
         </Grid>
-        <Grid item xs={4} sm={4} md={3}>
+        <Grid item xs={6} sm={4} md={3}>
           <Form.Item
             label="Invitados"
             name="guests"
@@ -68,6 +78,10 @@ const FormGuest = () => {
               {
                 required: true,
                 message: "Porfavor ingrese el no. de invitados",
+              },
+              {
+                pattern: regexPhone, // Utiliza la expresión regular definida
+                message: 'Por favor ingresa solo números (no se aceptan espacios)',
               },
             ]}
           >

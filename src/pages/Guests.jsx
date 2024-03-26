@@ -73,8 +73,8 @@ const Guests = () => {
             <FormGuest />
           </DialogContent>
           <DialogActions>
-            <Button onClick={modalGuest.closeGuest}>Cancelar</Button>
-            <Button type="submit" autoFocus>
+            <Button onClick={modalGuest.closeGuest} variant="outlined" >Cancelar</Button>
+            <Button type="submit" autoFocus variant="contained">
               {!row?.id ? "Agregar" : "Editar"}
             </Button>
           </DialogActions>

@@ -1,6 +1,6 @@
 import { clientAxiosGET, clientAxiosPUT } from "@Config/axios/methodRequest";
 import { BASE_URL_API } from "@Const/enviroments";
-import { decryptMessage } from "@Utils/commons";
+// import { decryptMessage } from "@Utils/commons";
 import { notification } from "antd";
 import { useLayoutEffect, useState } from "react";
 import { useParams } from "react-router-dom";
@@ -15,10 +15,10 @@ const openNotification = (api, placement = "top") => {
 
 const useInvite = () => {
   const params = useParams();
-  const inviteId = params?.guestId === undefined ? params?.inviteId : decryptMessage(params?.inviteId)
+  const inviteId = params?.guestId === undefined ? params?.inviteId : params?.inviteId
   const [api, contextHolder] = notification.useNotification();
   const [invite, setInvite] = useState({});
-  const endpoint = `invite/${inviteId}/${decryptMessage(params?.guestId)}`;
+  const endpoint = `invite/${inviteId}/${params?.guestId}`;
 
   const getInvite = async () => {
     const data = await clientAxiosGET({ url: endpoint });
@@ -48,7 +48,7 @@ const useInvite = () => {
     }
   };
   const confirm = {
-    guestId: params?.guestId === undefined ? "" : decryptMessage(params?.guestId),
+    guestId: params?.guestId === undefined ? "" : params?.guestId,
     onConfirmation: onConfirmation,
     confirmation: invite?.ticket?.confirmation,
   };

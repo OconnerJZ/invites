@@ -6,7 +6,7 @@ import {
 import { BASE_URL_INVITE } from "@Const/enviroments";
 import { useInviteContext } from "@Context/InviteContext";
 import { ColumnsGuests } from "@Pages/ColumnsGuests";
-import { encryptMessage } from "@Utils/commons";
+// import { encryptMessage } from "@Utils/commons";
 import { message } from "antd";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
@@ -45,7 +45,7 @@ const useGuests = () => {
   };
 
   const onShare = (row) => {
-    const url = `${BASE_URL_INVITE}${encryptMessage(row?.event_id)}/${encryptMessage(row?.id)}`;
+    const url = `${BASE_URL_INVITE}${row?.event_id}/${row?.id}`;
     addLinkFest(url);
     const message = `Invitación: ${url}`;
     const whatsappUrl = `https://wa.me/${row?.phone}?text=${encodeURIComponent(

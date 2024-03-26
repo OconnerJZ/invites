@@ -43,6 +43,7 @@ const Temporizador = ({ fechaEvento }) => {
           return (
             <Grid key={`${item.label}-${i}`} item xs={6} sm={3} md={3} lg={3}>
               <Card
+                className="card-temp-width"
                 sx={{
                   width: 130,
                   textAlign: "center",
@@ -61,7 +62,7 @@ const Temporizador = ({ fechaEvento }) => {
                   </Typography>
                   <Typography
                     sx={{ fontSize: "20px" }}
-                    className="titleSecondary"
+                    className="titleSecondary titles-temp"
                   >
                     {item.label.toUpperCase()}{" "}
                   </Typography>

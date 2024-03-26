@@ -42,6 +42,7 @@ const CardConfirmation = ({ confirm = {} }) => {
             }}
           />
           <Fab
+            sx={{width:"100%"}}
             variant="extended"
             color="success"
             onClick={() => confirm?.onConfirmation(confirm?.guestId)}

@@ -25,6 +25,7 @@ const CardCeremony = ({ ceremony, animate = "heartBeat" }) => {
     <>
       <Card
         variant="outlined"
+        className="card-location"
         sx={{
           width: 320,
           mb: "20px",

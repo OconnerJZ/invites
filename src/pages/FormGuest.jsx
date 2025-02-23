@@ -1,7 +1,7 @@
 import { Grid } from "@mui/material";
 import { Form, Input } from "antd";
 
-const regexPhone = /^[0-9]+$/;
+const regexPhone = /^\d+$/;
 
 const FormGuest = () => {
   return (

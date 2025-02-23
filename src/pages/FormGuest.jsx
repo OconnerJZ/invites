@@ -77,7 +77,7 @@ const FormGuest = () => {
             rules={[
               {
                 required: true,
-                message: "Porfavor ingrese el no. de invitados",
+                message: "Porfavor ingrese el # de invitados",
               },
               {
                 pattern: regexPhone, // Utiliza la expresión regular definida

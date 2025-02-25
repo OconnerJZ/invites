@@ -8,7 +8,7 @@ export const msjTicket = {
   valueClass: "A",
   placeGuess: "Tus invitados",
   timesDuration: "Duración",
-  valueTimes: "Sin limite",
+  valueTimes: "23:00",
   strapFamily: "Familia",
   strapDate: "Fecha",
 };
@@ -22,7 +22,7 @@ export const labelsTempo = {
 export const msjDressCode = {
   title: "Código de Vestimenta",
   message:
-    "Espero verlos luciendo su mejor atuendo para compartir momentos memorables juntos",
+    "Con el mejor estilo pero sin perder la comodidad, Queremos que te sientas genial y disfrutes al máximo",
 };
 
 export const msjConfirmation = {

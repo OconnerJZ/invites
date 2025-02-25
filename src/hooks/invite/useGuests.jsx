@@ -6,7 +6,6 @@ import {
 import { BASE_URL_INVITE } from "@Const/enviroments";
 import { useInviteContext } from "@Context/InviteContext";
 import { ColumnsGuests } from "@Pages/ColumnsGuests";
-// import { encryptMessage } from "@Utils/commons";
 import { message } from "antd";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";

@@ -1,4 +1,4 @@
-import { BASE_URL_API } from "@Const/enviroments";
+import { AWS_S3_URL } from "@Const/enviroments";
 import { typeEvents } from "@Const/lists";
 import { useInviteContext } from "@Context/InviteContext";
 import { Helmet } from "react-helmet";
@@ -18,7 +18,7 @@ const HelmetComponent = () => {
       <meta name="description" content={fest?.phrase} />
       <meta
         name="image"
-        content={`${BASE_URL_API}files/${fest?.id}/images/${fest?.avatar}`}
+        content={`${AWS_S3_URL}files/${fest?.id}/images/${fest?.avatar}`}
       />
       <meta name="url" content={urlfest} />
       <meta name="type" content="website" />

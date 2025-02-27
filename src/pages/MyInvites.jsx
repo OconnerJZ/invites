@@ -4,7 +4,7 @@ import AspectRatio from "@mui/joy/AspectRatio";
 import Card from "@mui/joy/Card";
 import CardContent from "@mui/joy/CardContent";
 import Typography from "@mui/joy/Typography";
-import { BASE_URL_API } from "@Const/enviroments";
+import { AWS_S3_URL } from "@Const/enviroments";
 import { Grid, IconButton, Stack, Tooltip } from "@mui/material";
 import BallotIcon from "@mui/icons-material/Ballot";
 import VisibilityIcon from "@mui/icons-material/Visibility";
@@ -33,7 +33,7 @@ const MyInvites = () => {
             >
               <AspectRatio ratio="1" sx={{ width: 90 }}>
                 <img
-                  src={`${BASE_URL_API}files/${even?.id}/images/${even?.avatar}`}
+                  src={`${AWS_S3_URL}files/${even?.id}/images/${even?.avatar}`}
                   loading="lazy"
                   alt=""
                 />

@@ -1,7 +1,7 @@
 import CardCeremony from "@Components/cards/CardCeremony";
 import CardConfirmation from "@Components/cards/CardConfirmation";
 import CardDressCode from "@Components/cards/CardDressCode";
-import { BASE_URL_API } from "@Const/enviroments";
+import { AWS_S3_URL } from "@Const/enviroments";
 import { Box, Typography } from "@mui/material";
 import MuiAvatar from "@mui/material/Avatar";
 import PropTypes from "prop-types";
@@ -74,7 +74,7 @@ const Background = ({
           {birthday?.avatar && (
             <MuiAvatar
               alt={"foto"}
-              src={`${BASE_URL_API}files/${birthday?.id}/images/${birthday?.avatar}`}
+              src={`${AWS_S3_URL}files/${birthday?.id}/images/${birthday?.avatar}`}
               sx={{
                 width: { xs: "180px", sm: "200px", md: "220px", lg: "250px" },
                 height: { xs: "180px", sm: "200px", md: "220px", lg: "250px" },

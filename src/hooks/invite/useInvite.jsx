@@ -1,5 +1,5 @@
 import { clientAxiosGET, clientAxiosPUT } from "@Config/axios/methodRequest";
-import { BASE_URL_API } from "@Const/enviroments";
+import { AWS_S3_URL } from "@Const/enviroments";
 // import { decryptMessage } from "@Utils/commons";
 import { notification } from "antd";
 import { useLayoutEffect, useState } from "react";
@@ -34,8 +34,8 @@ const useInvite = () => {
   const images = invite?.images;
   const bg = invite?.bg;
 
-  const path = `${BASE_URL_API}files/${event_id}/images/`;
-  const pathAudio = `${BASE_URL_API}files/${event_id}/audios/${birthday?.song}`;
+  const path = `${AWS_S3_URL}files/${event_id}/images/`;
+  const pathAudio = `${AWS_S3_URL}files/${event_id}/audios/${birthday?.song}`;
 
   const onConfirmation = async (id) => {
     const data = {

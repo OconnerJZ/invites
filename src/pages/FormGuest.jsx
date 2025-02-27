@@ -41,7 +41,7 @@ const FormGuest = () => {
             rules={[
               {
                 required: true,
-                message: "Porfavor ingrese la familia del invitado",
+                message: "Por favor ingrese el # de teléfono del invitado",
               },
               {
                 pattern: regexPhone, // Utiliza la expresión regular definida
@@ -59,7 +59,7 @@ const FormGuest = () => {
             rules={[
               {
                 required: true,
-                message: "Porfavor ingrese la mesa del invitado",
+                message: "Por favor ingrese la mesa del invitado",
               },
               {
                 pattern: regexPhone, // Utiliza la expresión regular definida

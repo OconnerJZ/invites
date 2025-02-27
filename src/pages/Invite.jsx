@@ -125,11 +125,11 @@ const Invite = () => {
         <Ticket ticket={ticket} />
       </Box>
 
-      <Background
+      {/* <Background
         parallax
         bgImage={`${path}${bg?.bg_dresscode?.path}`}
         dressCode={dressCode}
-      />
+      /> */}
       {confirm?.guestId !== "" && <Background confirm={confirm} />}
     </>
   );

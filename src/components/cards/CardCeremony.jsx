@@ -9,7 +9,7 @@ import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import PropTypes from "prop-types";
 import { Drawer } from "antd";
 import { useState } from "react";
-import { API_KEY_MAPS, BASE_URL_API } from "@Const/enviroments";
+import { API_KEY_MAPS, AWS_S3_URL} from "@Const/enviroments";
 import "animate.css";
 
 const CardCeremony = ({ ceremony, animate = "heartBeat" }) => {
@@ -35,7 +35,7 @@ const CardCeremony = ({ ceremony, animate = "heartBeat" }) => {
       >
         <CardOverflow>
           <AspectRatio ratio="2">
-            <img src={`${BASE_URL_API}files/${ceremony?.event_id}/images/${ceremony?.image}`} loading="lazy" alt="" />
+            <img src={`${AWS_S3_URL}files/${ceremony?.event_id}/images/${ceremony?.image}`} loading="lazy" alt="" />
           </AspectRatio>
         </CardOverflow>
         <CardContent>

@@ -22,14 +22,14 @@ export const labelsTempo = {
 export const msjDressCode = {
   title: "Código de Vestimenta",
   message:
-    "Con el mejor estilo pero sin perder la comodidad, Queremos que te sientas genial y disfrutes al máximo",
+    "Con el mejor estilo pero sin perder la comodidad, queremos que te sientas genial y disfrutes al máximo",
 };
 
 export const msjConfirmation = {
-  title: "Confirmar asistencia",
+  title: "Confirma tu asistencia",
   message:
-    "¡Se parte de este día especial! <br /> <br /> Favor de confirmar su presencia <br /> <br /> ¡Muchas Gracias!",
-  btnTitle: "Asistiré",
+    "¡Se parte de este día especial! <br /> <br /> Para confirmar tu asistencia, haz clic en el botón que aparece abajo <br /> <br />  ¡Muchas Gracias!",
+  btnTitle: "Asistir",
   resultTitle: "Gracias por confirmar",
   resultExtra: "¡Te esperamos!",
 };

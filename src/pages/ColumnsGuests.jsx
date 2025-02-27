@@ -1,4 +1,4 @@
-import { Descriptions } from "antd";
+import { Descriptions, Tag } from "antd";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import ShareIcon from "@mui/icons-material/Share";
 import EditIcon from "@mui/icons-material/Edit";
@@ -20,16 +20,18 @@ export const ColumnsGuests = (onShare, onEdit) => [
   {
     title: "Invitado",
     key: "invitado",
-    responsive: ["xs", "sm"],
+    responsive: ["xs"],
     width: 250,
     render: (_, row) => (
       <Descriptions title={row.name} size="small">
         <Descriptions.Item label="Familia">{row.family}</Descriptions.Item>
         <Descriptions.Item label="Mesa">{row.no_table}</Descriptions.Item>
         <Descriptions.Item label="Invitados">{row.guests}</Descriptions.Item>
-        <Descriptions.Item label="Confirma">
-          {row?.confirmation === 1 ? <CheckCircleIcon color="success" /> : ""}
-        </Descriptions.Item>
+        <Descriptions.Item
+          label={
+            row?.confirmation === 1 ?  <Tag color="green">Confirmado</Tag> : <Tag color="blue">Pendiente</Tag>
+          }
+        />
       </Descriptions>
     ),
   },
@@ -52,7 +54,7 @@ export const ColumnsGuests = (onShare, onEdit) => [
     responsive: ["md"],
   },
   {
-    title: "Confirma",
+    title: "Confirmación",
     key: "confirmation",
     responsive: ["md"],
     align: "center",

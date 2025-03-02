@@ -5,11 +5,12 @@ import CardOverflow from "@mui/joy/CardOverflow";
 import Divider from "@mui/joy/Divider";
 import Typography from "@mui/joy/Typography";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
+import FlatwareIcon from "@mui/icons-material/Flatware";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import PropTypes from "prop-types";
 import { Drawer } from "antd";
 import { useState } from "react";
-import { API_KEY_MAPS, AWS_S3_URL} from "@Const/enviroments";
+import { API_KEY_MAPS, AWS_S3_URL } from "@Const/enviroments";
 import "animate.css";
 
 const CardCeremony = ({ ceremony, animate = "heartBeat" }) => {
@@ -33,11 +34,18 @@ const CardCeremony = ({ ceremony, animate = "heartBeat" }) => {
             "0px 3px 3px -2px rgba(0,0,0,0.2), 0px 3px 4px 0px rgba(0,0,0,0.14), 0px 1px 8px 0px rgba(0,0,0,0.12)",
         }}
       >
-        <CardOverflow>
-          <AspectRatio ratio="2">
-            <img src={`${AWS_S3_URL}files/${ceremony?.event_id}/images/${ceremony?.image}`} loading="lazy" alt="" />
-          </AspectRatio>
-        </CardOverflow>
+        {ceremony?.nameOficial.toLowerCase() !== "banquete" && (
+          <CardOverflow>
+            <AspectRatio ratio="2">
+              <img
+                src={`${AWS_S3_URL}files/${ceremony?.event_id}/images/${ceremony?.image}`}
+                loading="lazy"
+                alt=""
+              />
+            </AspectRatio>
+          </CardOverflow>
+        )}
+
         <CardContent>
           <Typography
             className="titleSecondary"
@@ -62,11 +70,18 @@ const CardCeremony = ({ ceremony, animate = "heartBeat" }) => {
               fontWeight="md"
               textColor="text.secondary"
             >
-              <LocationOnIcon
-                className={`animate__animated animate__${animate} animate__infinite animate__slow  animate__delay-5s`}
-                onClick={showDrawer}
-                sx={{ color: "red", cursor: "pointer", fontSize: "40px" }}
-              />
+              {ceremony?.nameOficial.toLowerCase() === "banquete" ? (
+                <FlatwareIcon
+                  className={`animate__animated animate__${animate} animate__infinite animate__slow  animate__delay-5s`}
+                  sx={{ color: "navy", fontSize: "38px" }}
+                />
+              ) : (
+                <LocationOnIcon
+                  className={`animate__animated animate__${animate} animate__infinite animate__slow  animate__delay-5s`}
+                  onClick={showDrawer}
+                  sx={{ color: "red", cursor: "pointer", fontSize: "38px" }}
+                />
+              )}
             </Typography>
             <Divider orientation="vertical" />
             <Typography

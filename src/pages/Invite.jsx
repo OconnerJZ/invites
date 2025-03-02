@@ -89,14 +89,14 @@ const Invite = () => {
               }}
             />
             <Typography
-              className="bottom-centered titleContent"
+              className="top-centered titlePrimary"
               sx={{
                 width: { xs: "95%", sm: "90%", md: "80%", lg: "70%" },
                 color: { xs: "#000" },
-                fontSize: { xs: "14px", sm: "32px", md: "38px", lg: "40px" },
+                fontSize: { xs: "20px", sm: "40px", md: "46px", lg: "46px" },
                 textAlign: "center",
                 backgroundColor: {
-                  xs: "rgba(255,255,255,0.65)",
+                  xs: "rgba(255,255,255,0.3)",
                 },
                 backdropFilter: { xs: "blur(4px)" },
                 padding: { xs: "0px 0px", md: "0px 50px" },

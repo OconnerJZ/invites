@@ -92,11 +92,11 @@ const Invite = () => {
               className="top-centered titlePrimary"
               sx={{
                 width: { xs: "95%", sm: "90%", md: "80%", lg: "70%" },
-                color: { xs: "#000" },
-                fontSize: { xs: "20px", sm: "40px", md: "46px", lg: "46px" },
+                color: { xs: "#fff" },
+                fontSize: { xs: "32px", sm: "42px", md: "46px", lg: "46px" },
                 textAlign: "center",
                 backgroundColor: {
-                  xs: "rgba(255,255,255,0.3)",
+                  xs: "rgba(0,0,0,0.25)",
                 },
                 backdropFilter: { xs: "blur(4px)" },
                 padding: { xs: "0px 0px", md: "0px 50px" },
